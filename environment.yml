@@ -2,11 +2,11 @@ name: keras-frcnn
 channels:
   - defaults
 dependencies:
-  - python=3.6
+  - python3
   - h5py
   - numpy
   - opencv
-  - keras-gpu=2.2.4
+  - keras-gpu
   - cudatoolkit
-  - tensorflow-gpu=1.14.0
+  - tensorflow-gpu
   - scikit-learn
