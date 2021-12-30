@@ -8,7 +8,7 @@ from __future__ import absolute_import
 from __future__ import division
 
 import warnings
-
+import keras
 from keras.models import Model
 from keras.layers import Flatten, Dense, Input, Conv2D, MaxPooling2D, Dropout
 from keras.layers import GlobalAveragePooling2D, GlobalMaxPooling2D, TimeDistributed
@@ -17,7 +17,6 @@ from keras.utils import layer_utils
 from keras.utils.data_utils import get_file
 from keras import backend as K
 from keras_frcnn.RoiPoolingConv import RoiPoolingConv
-
 
 def get_weight_path():
     if K.common.image_dim_ordering() == 'th':

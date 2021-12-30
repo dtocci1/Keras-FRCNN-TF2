@@ -9,7 +9,7 @@ import pickle
 import re
 
 from keras import backend as K
-from keras.optimizers import Adam, SGD, RMSprop
+from keras.optimizers import adam_v2#, SGD, RMSprop
 from keras.layers import Input
 from keras.models import Model
 from keras_frcnn import config, data_generators
@@ -109,7 +109,7 @@ num_imgs = len(train_imgs)
 #train_imgs = [s for s in all_imgs if s['imageset'] == 'trainval']
 #val_imgs = [s for s in all_imgs if s['imageset'] == 'test']
 
-print(f'Num train samples {len(train_imgs}')
+print(f'Num train samples {len(train_imgs)}')
 print(f'Num val samples {len(val_imgs)}')
 
 
@@ -119,7 +119,7 @@ data_gen_val = data_generators.get_anchor_gt(val_imgs, classes_count, C, nn.get_
 if K.common.image_dim_ordering() == 'th':
 	input_shape_img = (3, None, None)
 else:
-	input_shape_img = (None, None, 3)
+	input_shape_img = (None, None, 3) # ****************** got up to here
 
 img_input = Input(shape=input_shape_img)
 roi_input = Input(shape=(None, 4))
