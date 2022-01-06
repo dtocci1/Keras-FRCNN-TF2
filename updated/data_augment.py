@@ -4,13 +4,14 @@ import copy
 
 
 def augment(img_data, config, augment=True):
+	'''
 	assert 'filepath' in img_data
 	assert 'bboxes' in img_data
 	assert 'width' in img_data
 	assert 'height' in img_data
-
+	'''
 	img_data_aug = copy.deepcopy(img_data)
-
+	print(img_data_aug)
 	img = cv2.imread(img_data_aug['filepath'])
 
 	if augment:
